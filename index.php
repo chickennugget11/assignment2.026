@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Web Application">
@@ -18,10 +19,11 @@
     <title>Group 4's Company</title>
 </head>
 <!--Để class page_1 cho tiền làm css-->
+
 <body class="page_1">
     <!--Navigation bar-->
-    <?php 
-        include("header.inc");
+    <?php
+    include("header.inc");
     ?>
     <br><br>
 
@@ -36,13 +38,14 @@
             often attracts talent who want to work with the best and contribute to impactful projects</p>
         <br>
         <!--Nút Apply ấn vào page 3-->
-        <a href="apply.html" class="apply">
+        <a href="apply.php" class="apply">
             Apply Now
         </a>
     </main>
     <!--Footer-->
-    <?php 
-        include("footer.inc");
+    <?php
+    include("footer.inc");
     ?>
 </body>
+
 </html>

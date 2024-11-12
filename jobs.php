@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="description" content="Web Application">
     <meta name="keywords" content="Assignment 1">
     <meta name="author" content="Group 4">
@@ -20,10 +20,10 @@
 </head>
 
 <body class="page2">
-<!--Navigation bar trong header-->
-<?php 
-        include("header.inc");
-?>
+    <!--Navigation bar trong header-->
+    <?php
+    include("header.inc");
+    ?>
 
     <br><br>
     <!--Header-->
@@ -84,15 +84,15 @@
 
     <!--Apply button-->
     <div>
-        <a href="apply.html">Apply now</a>
+        <a href="apply.php">Apply now</a>
     </div>
 
 
     <br><br>
 
     <!--Footer-->
-    <?php 
-        include("footer.inc");
+    <?php
+    include("footer.inc");
     ?>
 </body>
 
