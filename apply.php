@@ -29,7 +29,7 @@
 
 	<main class="form">
 		<!-- form -->
-		<form action="https://mercury.swin.edu.au/it000000/formtest.php" method="post">
+		<form action="./processEOI.php" method="post" novalidate="novalidate">
 			<!-- Reference number, name, date of birth -->
 			<label for="job_ref">Job Reference Number: </label>
 			<input type="text" name="job_ref" id="job_ref" pattern="[a-zA-Z0-9]{5}" required placeholder="JOB00"><br>
