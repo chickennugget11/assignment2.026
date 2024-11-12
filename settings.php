@@ -18,7 +18,6 @@ if ($test_local) {
 }
 
 
-
 $conn = mysqli_connect($host, $user, $pwd, $sql_db);
 
 if (!$conn) {
