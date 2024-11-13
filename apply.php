@@ -111,7 +111,7 @@
 
     <!--Class "return": ấn vào sẽ quay lại Job Description-->
     <aside class="return">
-        <a href="jobs.html"><img src="images/aside.png"></a>
+        <a href="jobs.php"><img src="images/aside.png"></a>
         <br>
         <figcaption>Click this image to return to the Job Description</figcaption>
     </aside>

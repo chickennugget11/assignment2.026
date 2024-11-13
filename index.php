@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,7 +37,7 @@
             often attracts talent who want to work with the best and contribute to impactful projects</p>
         <br>
         <!--Nút Apply ấn vào page 3-->
-        <a href="apply.html" class="apply">
+        <a href="apply.php" class="apply">
             Apply Now
         </a>
     </main>

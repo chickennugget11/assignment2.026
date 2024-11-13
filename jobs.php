@@ -84,7 +84,7 @@
 
     <!--Apply button-->
     <div>
-        <a href="apply.html">Apply now</a>
+        <a href="apply.php">Apply now</a>
     </div>
 
 
