@@ -20,21 +20,21 @@
 </head>
 
 <body class="page5">
-<?php 
-        include("header.inc");
-?>
+    <?php
+    include("header.inc");
+    ?>
 
 
-	<h1 class="bg">Enhancement</h1>
+    <h1 class="bg">Enhancement</h1>
 
 
-	<main>
-		<h2>Enhancement 1</h2>
-		<img src="images/enhancement.png" alt="dropdown menu">
-		<p>Dropdown menu on hover over main icon</p>
-	</main>
-    <?php 
-        include("footer.inc");
+    <main>
+        <h2>Enhancement 1</h2>
+        <img src="images/enhancement.png" alt="dropdown menu">
+        <p>Dropdown menu on hover over main icon</p>
+    </main>
+    <?php
+    include("footer.inc");
     ?>
 </body>
 

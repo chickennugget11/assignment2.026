@@ -1,30 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Web Application">
-    <meta name="keywords" content="Assignment 1">
-    <meta name="author" content="Group 4">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Font styles-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Protest+Strike&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
-    <!--Link the CSS file-->
-    <link href="styles/index.css" rel="stylesheet">
-    <!--Title-->
-    <title>Group 4's Company</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="Web Application">
+	<meta name="keywords" content="Assignment 1">
+	<meta name="author" content="Group 4">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--Font styles-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Protest+Strike&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+	<!--Link the CSS file-->
+	<link href="styles/index.css" rel="stylesheet">
+	<!--Title-->
+	<title>Group 4's Company</title>
 </head>
 
 <body class="page4">
-    <!--Navigation bar trong header-->
-    <?php 
-        include("header.inc");
+	<!--Navigation bar trong header-->
+	<?php
+	include("header.inc");
 	?>
 
-    <h1 class="bg">About Us</h1>
+	<h1 class="bg">About Us</h1>
 	<main class="abus">
 		<aside>
 			<img src="images/p4.png" alt="computer">
@@ -36,10 +37,10 @@
 			<li><strong>Course:</strong> COS10026</li>
 		</ul>
 	</main>
-    <br><br>
+	<br><br>
 	<!-- about members -->
 	<table>
-        <tr>
+		<tr>
 			<th colspan="5" id="tbhd">Group Members</th>
 		</tr>
 		<tr>
@@ -65,13 +66,13 @@
 		</tr>
 		<tr>
 			<td>Nguyễn Hoàng Tuấn Kiệt</td>
-            <td></td>
+			<td></td>
 			<td>24/09</td>
 			<td>Hà Nội</td>
 			<td>Games, Music</td>
 		</tr>
 	</table>
-    
+
 	<!-- timetable -->
 	<table>
 		<tr>
@@ -123,8 +124,9 @@
 	<br><br>
 
 
-	<?php 
-        include("footer.inc");
-    ?>
+	<?php
+	include("footer.inc");
+	?>
 </body>
+
 </html>
