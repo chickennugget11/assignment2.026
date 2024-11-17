@@ -77,7 +77,7 @@
 			<br>
 			<br>
 			<label for="post">Postcode: </label>
-			<input type="text" id="post" pattern="\d{4}" required placeholder="0000"><br>
+			<input type="text" name="post" id="post" pattern="\d{4}" required placeholder="0000"><br>
 			<!-- email, phone -->
 			<br>
 			<label for="email">Email address: </label>
