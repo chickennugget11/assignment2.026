@@ -34,7 +34,7 @@
 			$query
 		);
 		if (!$result) {
-			echo "<p>Something is wrong with ", $query, "</p>";
+			echo "<p>Something is wrong with $query</p>";
 			return;
 		}
 		// Display the retrieved records
@@ -65,11 +65,14 @@
 	}
 
 	?>
+
+	// list all eoi
+	<fieldset>
+		<legend>List all EOI</legend>
+		<form action="./manage_actions/list_all_eoi.php">
+			<input type="submit" value="List all EOI">
+		</form>
+	</fieldset>
 </body>
 
 </html>
-
-
-// list all eoi
-<form action="">
-</form>
