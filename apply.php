@@ -29,7 +29,7 @@
 
 	<main class="form">
 		<!-- form -->
-		<form action="./processEOI.php" method="post" novalidate="novalidate">
+		<form action="./processEOI.php" method="post">
 			<!-- Reference number, name, date of birth -->
 			<label for="job_ref">Job Reference Number: </label>
 			<input type="text" name="job_ref" id="job_ref" pattern="[a-zA-Z0-9]{5}" required placeholder="JOB00"><br>
@@ -56,11 +56,11 @@
 			<br>
 			<!-- address, suburb/town, state, postcode -->
 			<label for="address">Street Address: </label>
-			<input type="text" name="address" id="address" pattern="[a-zA-Z0-9]{0, 40}" required
+			<input type="text" name="street" id="street" pattern="[a-zA-Z0-9]{0, 40}" required
 				placeholder="00 Random Street"><br>
 			<br>
-			<label for="sub">Suburb/Town: </label>
-			<input type="text" name="sub" id="sub" pattern="[a-zA-Z0-9]{0, 40}" required
+			<label for="suburbtown">Suburb/Town: </label>
+			<input type="text" name="suburbtown" id="suburbtown" pattern="[a-zA-Z0-9]{0, 40}" required
 				placeholder="00 Random Street"><br>
 			<br>
 			<label for="state">State: </label>
@@ -74,8 +74,7 @@
 				<option value="TAS">TAS</option>
 				<option value="ACT">ACT</option>
 			</select>
-			<br>
-			<br>
+			<br><br>
 			<label for="post">Postcode: </label>
 			<input type="text" name="post" id="post" pattern="\d{4}" required placeholder="0000"><br>
 			<!-- email, phone -->
@@ -90,12 +89,12 @@
 			<!-- skills -->
 			<label>Skill Lists: </label><br>
 			<br>
-			<input type="checkbox" name="HTML" id="html" checked><label for="html"> HTML</label><br>
-			<input type="checkbox" name="CSS" id="css"><label for="css"> CSS</label><br>
-			<input type="checkbox" name="JavaScript" id="js"><label for="js"> JavaScript</label><br>
-			<input type="checkbox" name="PHP" id="php"><label for="php"> PHP</label><br>
-			<input type="checkbox" name="MySQL" id="mysql"><label for="mysql"> MySQL</label><br>
-			<input type="checkbox" name="OtherSkills" id="other_skill"><label for="other_skill">Other skills</label><br>
+			<input type="checkbox" name="html" id="html" checked><label for="html"> HTML</label><br>
+			<input type="checkbox" name="css" id="css"><label for="css"> CSS</label><br>
+			<input type="checkbox" name="js" id="js"><label for="js"> JavaScript</label><br>
+			<input type="checkbox" name="php" id="php"><label for="php"> PHP</label><br>
+			<input type="checkbox" name="mysql" id="mysql"><label for="mysql"> MySQL</label><br>
+			<input type="checkbox" name="other_skills" id="other_skills"><label for="other_skills">Other skills</label><br>
 			<br>
 			<label for="other_skills_textarea">if you have other skills, fill them here: </label><br>
 			<textarea name="other_skills" id="other_skills_textarea" placeholder="Your other skills..."> </textarea><br>

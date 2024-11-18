@@ -23,17 +23,17 @@ if (!$conn) {
 	echo "<p>Connection Failed, please return!</p>";
 } else {
 	// Create table 
-	$createTableQuery = "CREATE TABLE `eoi` (
+	$createTableQuery = "CREATE TABLE IF NOT EXISTS `eoi`  (
 	`eoinumber` int(11) NOT NULL,
   `job_ref` char(5) NOT NULL,
   `fname` varchar(20) NOT NULL,
   `lname` varchar(20) NOT NULL,
-  `dob` date NOT NULL,
-  `address` varchar(40) NOT NULL,
+  `street` varchar(40) NOT NULL,
   `suburbtown` varchar(40) NOT NULL,
   `state` enum('VIC','NSW','QLD','NT','WA','SA','TAS','ACT') NOT NULL,
   `post` char(4) NOT NULL,
   `email` varchar(255) NOT NULL,
+  `num` varchar(12) NOT NULL,
   `html` tinyint(1) NOT NULL,
   `css` tinyint(1) NOT NULL,
   `js` tinyint(1) NOT NULL,
