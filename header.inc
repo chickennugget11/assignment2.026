@@ -11,3 +11,5 @@
                 </div>
         </nav>
 </header>
+<?php
+require_once("./settings.php");
