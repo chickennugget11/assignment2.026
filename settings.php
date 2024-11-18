@@ -24,7 +24,7 @@ if (!$conn) {
 } else {
 	// Create table 
 	$createTableQuery = "CREATE TABLE IF NOT EXISTS `eoi`  (
-	`eoinumber` int(11) NOT NULL,
+	`eoinumber` int(11) NOT NULL AUTO_INCREMENT,
   `job_ref` char(5) NOT NULL,
   `fname` varchar(20) NOT NULL,
   `lname` varchar(20) NOT NULL,
@@ -39,7 +39,9 @@ if (!$conn) {
   `js` tinyint(1) NOT NULL,
   `php` tinyint(1) NOT NULL,
   `mysql` tinyint(1) NOT NULL,
-  `other_skills` mediumtext NOT NULL
+  `other_skills` mediumtext NOT NULL,
+  `status` enum('New', 'Current', 'Final') NOT NULL,
+  PRIMARY KEY (eoinumber)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;";
 	mysqli_query($conn, $createTableQuery);
 }

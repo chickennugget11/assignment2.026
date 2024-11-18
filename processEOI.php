@@ -52,7 +52,10 @@ $form_checkboxes = [
 
 if (isset_all($form_info)) {
 	$table = "`eoi`";
-	$column_names = join(", ", array_merge($form_info, $form_checkboxes));
+	$column_names = join(
+		", ",
+		array_merge($form_info, $form_checkboxes)
+	);
 
 	// Khanh and Kiệt, I am very sorry, but since PHP is fucked up,
 	// we used a HASHMAP as an array
@@ -64,20 +67,21 @@ if (isset_all($form_info)) {
 	}
 
 	// Now we can handle language checkboxes independently,
-	//  but we have to ensure that the other elements are there
+	// but we have to ensure that the other elements are there
 	// which is why it's in this block
 
 	foreach ($form_checkboxes as $checkbox_value) {
-		$record[$checkbox_value] = isset($_POST[$checkbox_value]) ? checkbox_to_bool($_POST[$checkbox_value]) : false;
+		$record[$checkbox_value] = isset($_POST[$checkbox_value]) ?
+			checkbox_to_bool($_POST[$checkbox_value]) : false;
 	}
 	// iterate by reference
 	foreach ($record as &$i) {
 		$i = "\"" . $i . "\"";
-		echo $i;
+		// echo $i;
 	}
 
-	// why the fuck is it the dot to concat strings
-	$value = join(", ", $record);
+	// add value to table
+	$value = join(", ", $record) . " \"New\" "; // for status
 	$insert_query = "INSERT INTO $table ($column_names) VALUES ($value)";
 	echo "<p>$insert_query</p>";
 	$conn->query($insert_query);
