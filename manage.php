@@ -63,7 +63,7 @@
 	<br>
 	<fieldset>
 		<legend>Update EOI Information</legend>
-		<form action="" method="post"></form>
+		<form action="./manage_actions/update_eoi.php" method="post"></form>
 	</fieldset>
 
 	<!-- Change Status of EOI -->
