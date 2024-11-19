@@ -4,8 +4,8 @@ require_once("./settings.php");
 
 function trim_string(string $str): string
 {
-	// lowercase everything because why not
-	$str = strtolower($str);
+	// YEAH BABY
+	$str = ucwords($str);
 
 	// remove additional spaces
 	$str = trim($str);

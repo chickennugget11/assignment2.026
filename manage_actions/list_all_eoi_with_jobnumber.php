@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<title>EOI Number Search</title>
 </head>
 
 <body>
@@ -17,7 +17,10 @@
 		display_table(query: "SELECT * FROM `eoi` WHERE job_ref = \"$jobnum\" ");
 	}
 	?>
-	<button><a href="../manage.php">Go back to Admin panel</a></button>
+	<?php
+	include("./post_query.inc");
+	?>
+
 
 </html>
 <?php

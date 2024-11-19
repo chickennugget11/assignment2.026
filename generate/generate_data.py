@@ -14,7 +14,7 @@ hobbies_df = pd.read_csv("./hobbylist.csv")
 hobbies = hobbies_df["Hobby-name"].to_list()
 num_hobbies = len(hobbies)
 
-rows: int = 100
+rows: int = 150
 
 
 

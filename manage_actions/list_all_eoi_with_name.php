@@ -23,7 +23,10 @@
 	//  echo "<p>$query</p>";
 	display_table($query);
 	?>
-	<button><a href="../manage.php">Go back to Admin panel</a></button>
+	<?php
+	include("./post_query.inc");
+	?>
+
 </body>
 
 </html>

@@ -19,8 +19,9 @@
 			<input type="submit" value="List all EOI">
 		</form>
 	</fieldset>
-	<br>
+
 	<!-- list EOI with job number -->
+	<br>
 	<fieldset>
 		<legend>Search for EOIs with job number</legend>
 		<form action="./manage_actions/list_all_eoi_with_jobnumber.php" method="post">
@@ -31,8 +32,9 @@
 			<input type="submit" value="Search for EOI">
 		</form>
 	</fieldset>
-	<br>
+
 	<!-- list all EOI given first/last name -->
+	<br>
 	<fieldset>
 		<legend>Search for EOIs with names</legend>
 		<form action="./manage_actions/list_all_eoi_with_name.php" method="post">
@@ -44,14 +46,41 @@
 			<input type="submit" value="Find EOI">
 		</form>
 	</fieldset>
+
 	<!-- Delete all EOIs with job reference number -->
+	<br>
 	<fieldset>
 		<legend>Delete all EOIs with job reference number</legend>
-		<form action="./manage_actions/delete_all_eoi_with_jobnumber.php">
+		<form action="./manage_actions/delete_all_eoi_with_jobnumber.php" method="post">
 			<label for="job_delete">Job number to delete:</label>
 			<input type="text" name="job_delete" id="job_delete"
 				pattern="[a-zA-Z0-9]{5}" placeholder="JOB00" required>
 			<input type="submit" value="DELETE EOI (CAN'T BE REVERSED!)">
+		</form>
+	</fieldset>
+
+	<!-- TODO: Update EOI  -->
+	<br>
+	<fieldset>
+		<legend>Update EOI Information</legend>
+		<form action="" method="post"></form>
+	</fieldset>
+
+	<!-- Change Status of EOI -->
+	<br>
+	<fieldset>
+		<legend>update </legend>
+		<form action="./manage_actions/change_eoi_status.php" method="post">
+			<label for="update_number">EOI Number:</label>
+			<input type="text" name="update_number"
+				id="update_number" pattern="\d{0, 100}" required><br>
+			<label for="new_status">Update to: </label>
+			<select name="new_status" id="new_status">
+				<option value="New">New</option>
+				<option value="Current">Current</option>
+				<option value="Final">Final</option>
+			</select>
+			<input type="submit" value="Update EOI">
 		</form>
 	</fieldset>
 

@@ -87,8 +87,8 @@ function display_table($query)
 // other functions mainly used to process queries
 function trim_string(string $str): string
 {
-	// lowercase everything because why not
-	$str = strtolower($str);
+	// YEAH BABY
+	$str = ucwords($str);
 
 	// remove additional spaces
 	$str = trim($str);

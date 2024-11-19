@@ -44,4 +44,9 @@ if (!$conn) {
 		PRIMARY KEY (eoinumber)
 	) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;";
 	mysqli_query($conn, $createTableQuery);
+	// fix table
+	mysqli_query(
+		$conn,
+		"ALTER TABLE `eoi` AUTO_INCREMENT = 0;"
+	);
 }
