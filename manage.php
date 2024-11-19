@@ -44,6 +44,16 @@
 			<input type="submit" value="Find EOI">
 		</form>
 	</fieldset>
+	<!-- Delete all EOIs with job reference number -->
+	<fieldset>
+		<legend>Delete all EOIs with job reference number</legend>
+		<form action="./manage_actions/delete_all_eoi_with_jobnumber.php">
+			<label for="job_delete">Job number to delete:</label>
+			<input type="text" name="job_delete" id="job_delete"
+				pattern="[a-zA-Z0-9]{5}" placeholder="JOB00" required>
+			<input type="submit" value="DELETE EOI (CAN'T BE REVERSED!)">
+		</form>
+	</fieldset>
 
 </body>
 
