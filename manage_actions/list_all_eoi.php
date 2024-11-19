@@ -10,9 +10,8 @@
 <body>
 	<?php
 
-	require_once("./settings.php");
-	require_once("../manage.php");
-
+	require_once("./display_table.php");
+	echo "<p>Table of all EOIs:</p>";
 	$query = "SELECT * FROM `eoi`";
 	display_table($query);
 	?>

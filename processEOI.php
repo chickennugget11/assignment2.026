@@ -4,8 +4,12 @@ require_once("./settings.php");
 
 function trim_string(string $str): string
 {
+	// lowercase everything because why not
+	$str = strtolower($str);
+
 	// remove additional spaces
 	$str = trim($str);
+
 	// and backslahes
 	$str = str_replace("\\", "", $str);
 
@@ -23,7 +27,8 @@ function isset_all(array $attributes): bool
 {
 	// check if all attributes is set. Although it should not be possible
 	foreach ($attributes as $attribute) {
-		if (!isset($_POST[$attribute])) return false;
+		if (!isset($_POST[$attribute]))
+			return false;
 	}
 	return true;
 }
@@ -38,6 +43,7 @@ $form_info = [
 	"post",
 	"email",
 	"num",
+	// "other_skills",
 ];
 
 // programming languages in checkboxes, require special handling
@@ -52,10 +58,20 @@ $form_checkboxes = [
 
 if (isset_all($form_info)) {
 	$table = "`eoi`";
+	// other skills must be handled distictly
+	$other_skills = "other_skills";
+	$status = "status";
+
+
 	$column_names = join(
 		", ",
-		array_merge($form_info, $form_checkboxes)
+		array_merge(
+			$form_info,
+			$form_checkboxes,
+			[$other_skills, $status]
+		)
 	);
+
 
 	// Khanh and Kiệt, I am very sorry, but since PHP is fucked up,
 	// we used a HASHMAP as an array
@@ -63,7 +79,7 @@ if (isset_all($form_info)) {
 	$record = [];
 	foreach ($form_info as $attribute) {
 		// oh boy
-		$record[$attribute] = $_POST[$attribute];
+		$record[$attribute] = trim_string($_POST[$attribute]);
 	}
 
 	// Now we can handle language checkboxes independently,
@@ -74,6 +90,12 @@ if (isset_all($form_info)) {
 		$record[$checkbox_value] = isset($_POST[$checkbox_value]) ?
 			checkbox_to_bool($_POST[$checkbox_value]) : false;
 	}
+
+	//other skills and status column handled seperately
+	$record[$other_skills] = trim_string($_POST["other_skills"]);
+	$record[$status] = "New";
+
+
 	// iterate by reference
 	foreach ($record as &$i) {
 		$i = "\"" . $i . "\"";
@@ -81,7 +103,7 @@ if (isset_all($form_info)) {
 	}
 
 	// add value to table
-	$value = join(", ", $record) . " \"New\" "; // for status
+	$value = join(", ", $record); // for status
 	$insert_query = "INSERT INTO $table ($column_names) VALUES ($value)";
 	echo "<p>$insert_query</p>";
 	$conn->query($insert_query);
