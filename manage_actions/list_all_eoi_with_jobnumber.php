@@ -9,10 +9,10 @@
 
 <body>
 	<?php
-	require_once("./display_table.php");
+	require_once("./manage_functions.php");
 	// $POST the goat
 	if (isset($_POST["jobnum"])) {
-		$jobnum = $_POST["jobnum"];
+		$jobnum = trim_string($_POST["jobnum"]);
 		echo "<p>Here are all EOIs for job number $jobnum</p>";
 		display_table(query: "SELECT * FROM `eoi` WHERE job_ref = \"$jobnum\" ");
 	}

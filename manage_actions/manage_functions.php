@@ -1,8 +1,6 @@
 <?php
-// require_once("../settings.php");
-require_once("../settings.php");
 
-// taken from assignment 10, used for display queries
+require_once("../settings.php");
 
 $form_info = [
 	"job_ref",
@@ -25,6 +23,12 @@ $form_checkboxes = [
 	"php",
 	"mysql"
 ];
+
+// require seperate handling
+$other_skills = "other_skills";
+$status = "status";
+
+
 function display_table($query)
 {
 	$conn = $GLOBALS["conn"];
@@ -53,7 +57,7 @@ function display_table($query)
 	);
 	if (!$result) {
 		echo "
-	<p>Something is wrong with $query</p>";
+<p>Something is wrong with $query</p>";
 		return;
 	}
 	// Display the retrieved records
@@ -66,7 +70,7 @@ function display_table($query)
 	// retrieve current record pointed by the result pointer
 	while ($row = mysqli_fetch_assoc($result)) {
 		echo "
-		<tr>\n ";
+	<tr>\n ";
 		// echo "<td>", $row["make"], "</td>\n ";
 		// echo "<td>", $row["model"], "</td>\n ";
 		// echo "<td>", $row["price"], "</td>\n ";
@@ -76,6 +80,38 @@ function display_table($query)
 		echo "</tr>\n ";
 	}
 	echo "
-	</table>\n ";
+</table>\n ";
 	mysqli_free_result($result);
+}
+
+// other functions mainly used to process queries
+function trim_string(string $str): string
+{
+	// lowercase everything because why not
+	$str = strtolower($str);
+
+	// remove additional spaces
+	$str = trim($str);
+
+	// and backslahes
+	$str = str_replace("\\", "", $str);
+
+	// remove special chars? 
+	return htmlspecialchars($str);
+}
+
+function checkbox_to_bool($value): bool
+{
+	// Safely check if the checkbox is set and if it's checked
+	return isset($_POST[$value]) && $_POST[$value] === 'on';
+}
+
+function isset_all(array $attributes): bool
+{
+	// check if all attributes is set. Although it should not be possible
+	foreach ($attributes as $attribute) {
+		if (!isset($_POST[$attribute]))
+			return false;
+	}
+	return true;
 }

@@ -10,6 +10,10 @@ cities = cities_df["city_ascii"].to_list()
 
 providers = [i.strip("\n") for i in open("email_providers.txt", "r").readlines()]
 
+hobbies_df = pd.read_csv("./hobbylist.csv")
+hobbies = hobbies_df["Hobby-name"].to_list()
+num_hobbies = len(hobbies)
+
 rows: int = 100
 
 
@@ -49,6 +53,13 @@ def random_number(a: int, b: int) -> str:
 def random_bool() -> int:
     return int(randint(1, 100) % 2 == 0)
 
+def random_skills() -> str:
+    s = set()
+    for _ in range(5):
+        s.add(hobbies[randint(1, num_hobbies * 10) % num_hobbies])
+    return ", ".join(list(s))
+        
+
 test_file = open("test_sql.txt", "w", encoding="utf-8")
 
 for _ in range(rows):
@@ -70,7 +81,7 @@ for _ in range(rows):
        		"{random_bool()}",
        		"{random_bool()}",
 	   		"{random_bool()}",
-			"{random_string(0, 100)}",
+			"{random_skills()}",
    			"New"
 		);
 		""".replace("\n", " ").replace("\t", " ") + "\n"

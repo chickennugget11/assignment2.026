@@ -33,6 +33,7 @@ function isset_all(array $attributes): bool
 	return true;
 }
 
+
 $form_info = [
 	"job_ref",
 	"fname",
@@ -43,7 +44,6 @@ $form_info = [
 	"post",
 	"email",
 	"num",
-	// "other_skills",
 ];
 
 // programming languages in checkboxes, require special handling
@@ -56,12 +56,13 @@ $form_checkboxes = [
 	"mysql"
 ];
 
+// require seperate handling
+$other_skills = "other_skills";
+$status = "status";
+
 if (isset_all($form_info)) {
 	$table = "`eoi`";
 	// other skills must be handled distictly
-	$other_skills = "other_skills";
-	$status = "status";
-
 
 	$column_names = join(
 		", ",
@@ -71,7 +72,6 @@ if (isset_all($form_info)) {
 			[$other_skills, $status]
 		)
 	);
-
 
 	// Khanh and Kiệt, I am very sorry, but since PHP is fucked up,
 	// we used a HASHMAP as an array
