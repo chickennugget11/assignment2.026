@@ -22,7 +22,10 @@
 		// used to create table
 		$form_info = $GLOBALS["form_info"];
 		$form_checkboxes = $GLOBALS["form_checkboxes"];
-
+		$columns = array_merge(
+			$form_info,
+			$form_checkboxes
+		);
 
 		if (!$conn) {
 			echo "<p>MySQL connection failure";
@@ -45,7 +48,7 @@
 		// 	. "<th scope=\"col\">Price</th>\n "
 		// 	. "</tr>\n ";
 		$table_head = "<tr>\n";
-		foreach (array_merge($form_info, $form_checkboxes) as $col) {
+		foreach ($columns as $col) {
 			echo "<th scope=\"col\">$col</th>\n";
 		}
 
@@ -55,7 +58,7 @@
 			// echo "<td>", $row["make"], "</td>\n ";
 			// echo "<td>", $row["model"], "</td>\n ";
 			// echo "<td>", $row["price"], "</td>\n ";
-			foreach (array_merge($form_info, $form_checkboxes) as $col) {
+			foreach ($columns as $col) {
 				echo "<td>$row[$col]</td>\n";
 			}
 			echo "</tr>\n ";
@@ -66,11 +69,22 @@
 
 	?>
 
+	<h1>Admin Panel</h1>
+
 	// list all eoi
 	<fieldset>
 		<legend>List all EOI</legend>
 		<form action="./manage_actions/list_all_eoi.php">
 			<input type="submit" value="List all EOI">
+		</form>
+	</fieldset>
+	<fieldset>
+		<form action="./manage_actions/list_all_eoi_with_jobnumber.php">
+			<label for="jobnum"></label>
+			<input type="text" name="jobnum"
+				id="jobnum" pattern="[a-zA-Z0-9]{5}"
+				placeholder="JOB00" required>
+			<input type="submit" value="Search for EOI">
 		</form>
 	</fieldset>
 </body>
