@@ -1,2 +1,195 @@
 /*File css riêng cho manage, nếu đề bài yêu cầu phải gộp hết thì tạo id class ở đây nhé*/
+/*File css riêng cho manage, nếu đề bài yêu cầu phải gộp hết thì tạo id class ở đây nhé*/
+body {
+	background-image: url("./images/bgp1.png");
+	background-size: cover;
+	font-family: 'Afacad Flux', 'Source Code Pro', Arial, Helvetica, sans-serif;
+	color: white;
+	background-color: rgb(150, 150, 150);
+}
 
+h1 {
+	font-family: 'Afacad Flux', Arial;
+	font-size: 5em;
+	color: antiquewhite;
+	background: none;
+	text-shadow: 3px 3px 6px grey;
+	text-align: center;
+}
+
+legend {
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+fieldset {
+	background-color: rgba(83, 82, 82, 0.301);
+}
+
+
+/*The "List all EIO", "Find EOI" button*/
+.list_all,
+.find,
+.delete {
+	clear: both;
+	background-color: white;
+	text-decoration: none;
+	font-family: 'Afacad Flux', Arial;
+	text-decoration: none;
+	color: rgb(51, 51, 53);
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	font-weight: bold;
+	padding: .625em 3.5em;
+	border-radius: 10px
+}
+
+.search,
+.update {
+	clear: both;
+	background-color: white;
+	float: right;
+	text-decoration: none;
+	font-family: 'Afacad Flux', Arial;
+	text-decoration: none;
+	color: rgb(51, 51, 53);
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	font-weight: bold;
+	padding: .625em 3.5em;
+	border-radius: 10px
+}
+
+/*Navigation Bar*/
+nav {
+	height: 80px;
+	display: block;
+}
+
+nav>img {
+	text-align: left;
+	display: block;
+	width: 80px;
+
+}
+
+nav ul {
+	margin: 0;
+	padding: 0;
+}
+
+nav ul li {
+	background-color: rgb(68, 68, 72);
+	background-size: cover;
+	list-style: none;
+	float: right;
+	font-size: 96%;
+}
+
+nav ul li a {
+	display: block;
+	font-weight: bold;
+	padding: .625em 3.5em;
+	font-family: 'Afacad Flux';
+	text-decoration: none;
+	color: rgb(255, 255, 255);
+	border-right: 1px black;
+}
+
+.drop {
+	left: 100%;
+	color: white;
+	/* padding: 16px; */
+	border: none;
+	cursor: pointer;
+
+	width: 80%;
+	height: 80%;
+	background: none;
+}
+
+
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #252525;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(179, 161, 161, 0.212);
+	z-index: 1;
+}
+
+
+.dropdown-content a {
+	color: rgb(247, 247, 247);
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+	background-color: #000000
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+/*Footer (main)*/
+footer {
+	justify-content: space-between;
+	display: flex;
+	width: 100%;
+	background-color: rgb(56, 56, 58);
+	color: rgb(255, 255, 255);
+	padding: 0.625em;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+#footer_left {
+	font-size: 14px;
+	/* Adjust font size if needed */
+}
+
+#footer_right {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+#footer_right ul {
+	display: flex;
+	gap: 15px;
+	/* Adjust spacing between names */
+	list-style: none;
+	padding: 0;
+	margin: 5px 0 0;
+	/* Adjust as needed */
+}
+
+#footer_right span {
+	margin-bottom: 5px;
+}
+
+#footer_right li a {
+	color: #f0e5d8;
+	/* Adjust link color as needed */
+	text-decoration: underline;
+	font-size: 16px;
+	/* Adjust font size if needed */
+	font-weight: bold;
+}
+
+footer p {
+	display: flex;
+}
