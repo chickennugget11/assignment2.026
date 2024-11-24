@@ -11,7 +11,8 @@
 <body>
 	<!-- this file has a body for all the wrong reasons... -->
 	<h1>Admin Panel</h1>
-
+<fieldset>
+	<legend>
 	<!-- list all eoi -->
 	<fieldset>
 		<legend>List all EOI</legend>
@@ -83,7 +84,8 @@
 			<input type="submit" value="Update EOI">
 		</form>
 	</fieldset>
-
+	</legend>
+</fieldset>
 </body>
 
 </html>
