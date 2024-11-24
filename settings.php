@@ -50,3 +50,27 @@ if (!$conn) {
 		"ALTER TABLE `eoi` AUTO_INCREMENT = 0;"
 	);
 }
+
+	if (!$conn) {
+		echo "<p>Connection Failed, please return!</p>";
+	} else {
+		$tableQuery = "SHOW TABLES LIKE 'accounts'";
+		$tablecheck = mysqli_query($conn, $tableQuery);
+		$adminPass = "admin101";
+		$hashedPassword = password_hash($adminPass, PASSWORD_DEFAULT);
+		
+		if (mysqli_num_rows($tablecheck) == 0) { 
+			// Table does not exist, create it
+			$createTableQuery = "CREATE TABLE `accounts` (
+				`id` INT(255) AUTO_INCREMENT PRIMARY KEY,
+				`username` VARCHAR(255) NOT NULL,
+				`password` VARCHAR(255) NOT NULL
+			)";
+			mysqli_query($conn, $createTableQuery);
+
+			// Insert sample data
+			$insertQuery = "INSERT INTO `accounts` (`id`, `username`, `password`) VALUES ('0', 'admin', '$hashedPassword')";
+			mysqli_query($conn, $insertQuery);
+		}
+			// $insertQuery is not defined(?) idk tbh pls look into this lol
+}
