@@ -1,9 +1,11 @@
 <?php
 // mercury
 $host = "feenix-mariadb.swin.edu.au";
-$user = "s104773652";
-$pwd = "hth233kiet";
-$sql_db = "s104773652_db";
+$user = "s104189712"; // your user name
+$pwd = "301104"; // your password (date of birth ddmmyy unless changed)
+$sql_db = "s104189712_db"; // your database
+
+
 $table_name = "`eoi`";
 
 // test
@@ -14,10 +16,9 @@ if ($test_local) {
 	$user = "root";
 	$pwd = "";
 	$sql_db = "test";
-	$table_name = "`eoi`";
 }
 
-$conn = mysqli_connect($host, $user, $pwd, $sql_db);
+$conn = @mysqli_connect($host, $user, $pwd, $sql_db);
 
 if (!$conn) {
 	echo "<p>Connection Failed, please return!</p>";
@@ -61,7 +62,7 @@ if (!$conn) {
 
 	if (mysqli_num_rows($tablecheck) == 0) {
 		// Table does not exist, create it
-		$createTableQuery = "CREATE TABLE `accounts` (
+		$createTableQuery = "CREATE TABLE IF NOT EXISTS `accounts` (
 				`id` INT(255) AUTO_INCREMENT PRIMARY KEY,
 				`username` VARCHAR(255) NOT NULL,
 				`password` VARCHAR(255) NOT NULL
