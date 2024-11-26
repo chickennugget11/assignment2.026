@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 include_once("settings.php");
 
@@ -6,10 +6,10 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
     header('Location: manage.php');
     exit();
 } else {
-    
 } ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,15 +18,16 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
     <link rel="stylesheet" href="styles/registration.css">
     <title>Login</title>
 </head>
+
 <body>
-    
+
 
     <main>
         <div>
-        <?php if (isset($_GET['errormsg'])) { ?>
-            <p id="errormsg"><?php echo $_GET['errormsg']; ?></p>
-        
-        } ?>
+            <?php if (isset($_GET['errormsg'])) {
+                echo "<p id=\"errormsg\">" . $_GET['errormsg'] . "</p>";
+            }
+            ?>
         </div>
         <div id="main">
             <h2>LOGIN</h2>
@@ -55,4 +56,5 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
     </main>
     <a href="index.php"><img src="images/original.png" alt="origin" id="origin"></a>
 </body>
+
 </html>
