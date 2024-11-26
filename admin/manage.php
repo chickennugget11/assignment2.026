@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Admin Panel</title>
-	<link rel="stylesheet" href="./styles/manage.css">
+	<link rel="stylesheet" href="../styles/manage.css">
 </head>
 
 <body>
@@ -70,7 +70,7 @@
 			<!-- Change Status of EOI -->
 			<br>
 			<fieldset>
-				<legend>update </legend>
+				<legend>EOI Status Update </legend>
 				<form action="./manage_actions/change_eoi_status.php" method="post">
 					<label for="update_number">EOI Number:</label>
 					<input type="text" name="update_number"

@@ -1,7 +1,7 @@
 <header>
         <nav>
             <div class="dropdown">
-                <button class="drop"> <img src="./images/logo.png" alt="menu"></button>
+                <button class="drop"> <img src="../images/logo.png" alt="menu"></button>
                 <div class="dropdown-content">
                     <a href="index.php">Home</a>
                     <a href="jobs.php">Jobs Descriptions</a>
@@ -9,9 +9,9 @@
                     <a href="enhancements.php">Enhancements</a>
                     <a href="about.php">About Us</a>
                     <hr>
-                    <a href="./admin/login.php">Admin Login</a>
+                    <a href="./login.php">Admin Login</a>
                 </div>
         </nav>
 </header>
 <?php
-require_once("./settings.php");
+require_once("../settings.php");

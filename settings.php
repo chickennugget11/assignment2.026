@@ -24,7 +24,7 @@ if (!$conn) {
 	echo "<p>Connection Failed, please return!</p>";
 } else {
 	// Create table 
-	$createTableQuery = "CREATE TABLE IF NOT EXISTS `eoi`  (
+	$createTableQuery = "CREATE TABLE IF NOT EXISTS `eoi` ( 
 		`eoinumber` int(11) NOT NULL AUTO_INCREMENT,
 		`job_ref` char(5) NOT NULL,
 		`fname` varchar(20) NOT NULL,
@@ -55,23 +55,23 @@ if (!$conn) {
 if (!$conn) {
 	echo "<p>Connection Failed, please return!</p>";
 } else {
-	$tableQuery = "SHOW TABLES LIKE 'accounts'";
-	$tablecheck = mysqli_query($conn, $tableQuery);
-	$adminPass = "admin101";
-	$hashedPassword = password_hash($adminPass, PASSWORD_DEFAULT);
+	$admin = "admin";
+	$admin_password = "admin101";
 
-	if (mysqli_num_rows($tablecheck) == 0) {
-		// Table does not exist, create it
-		$createTableQuery = "CREATE TABLE IF NOT EXISTS `accounts` (
-				`id` INT(255) AUTO_INCREMENT PRIMARY KEY,
-				`username` VARCHAR(255) NOT NULL,
-				`password` VARCHAR(255) NOT NULL
-			)";
-		mysqli_query($conn, $createTableQuery);
 
-		// Insert sample data
-		$insertQuery = "INSERT INTO `accounts` (`id`, `username`, `password`) VALUES ('0', 'admin', '$hashedPassword')";
+	$createTableQuery = "CREATE TABLE IF NOT EXISTS `hr_user` (
+			`username` VARCHAR(255) NOT NULL,
+			`password` VARCHAR(255) NOT NULL
+		)";
+	mysqli_query($conn, $createTableQuery);
+
+	// check empty table
+	$results = mysqli_query($conn, "SELECT * FROM `hr_user`");
+	// Insert sample data
+	if (mysqli_num_rows($results) == 0) {
+		$insertQuery = "INSERT INTO `hr_user` (`username`, `password`) VALUES ('$admin', '$admin_password')";
 		mysqli_query($conn, $insertQuery);
 	}
+
 	// $insertQuery is not defined(?) idk tbh pls look into this lol
 }

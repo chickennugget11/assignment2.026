@@ -13,46 +13,37 @@
     <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Protest+Strike&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
     <!--Link the CSS file-->
-    <link href="styles/index.css" rel="stylesheet">
+    <link href="../styles/index.css" rel="stylesheet">
 </head>
 
 <body>
     <?php
     session_start();
-    require_once("settings.php");
+    require_once("../settings.php");
+    require_once("./manage_actions/manage_functions.php");
 
     if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
-        $username = isset($_POST['username']) ? trim($_POST['username']) : "";
-        $password = isset($_POST['password']) ? trim($_POST['password']) : "";
+        $username = isset($_POST['username']) ? strtolower(trim_string($_POST['username'])) : "";
+        $password = isset($_POST['password']) ? strtolower(trim_string($_POST['password'])) : "";
 
-
-        $query = "SELECT * FROM hr_users WHERE username = '$username' AND password = ''";
+        $query = "SELECT * FROM `hr_user` WHERE username = '$username' AND password = '$password'";
+        echo "<p>$query</p>";
         $result = mysqli_query($conn, $query);
 
-        if ($result && mysqli_num_rows($result) === 1) {
+        if ($result) {
             $user = mysqli_fetch_assoc($result);
-
-            // compare password tho
-            if ($password === $user['password']) {
-                // Đăng nhập thành công
-                $_SESSION['logged_in'] = true; // this user logged in
-                $_SESSION['username'] = $username; // saved the username
-                $_SESSION['fullname'] = $user['fullname']; // saved the full name
-
-                header("Location: manage.php");
-                //header("Location: manage.php");// Lets goooooooooo, tbh i dont think it s neccessary but if u ưant so ok 
-                exit();
-            } else {
-                $error_message = "Invalid username or password.";
+            if (mysqli_num_rows($result) == 0) echo "Invalid username or password.";
+            else {
+                header("Location: ./manage.php");
             }
         } else {
-            $error_message = "Invalid username or password.";
+            echo "Something went wrong";
         }
     }
     ?>
     <?php
-    include("header.inc");
+    include("./admin_header.inc");
     ?>
     <!-- Form -->
     <h1>Log In</h1>
@@ -69,7 +60,7 @@
 
     </form>
 
-    <p>Don't have an account? <a href="register.php">Register here</a>.</p>
+    <!-- <p>Don't have an account? <a href="register.php">Register here</a>.</p> -->
 
 </body>
 
