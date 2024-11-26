@@ -25,8 +25,9 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
         <div>
         <?php if (isset($_GET['errormsg'])) { ?>
             <p id="errormsg"><?php echo $_GET['errormsg']; ?></p>
+        
+        } ?>
         </div>
-        <?php } ?>
         <div id="main">
             <h2>LOGIN</h2>
             <form action="submission.php" method="post">
